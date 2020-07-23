@@ -1,0 +1,67 @@
+doctype html
+
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title
+      block title
+    script(src='https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js')
+    script(src='https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css')
+    //- link(rel='stylesheet', href='css/common.css')
+    block import
+
+  style.
+    .footer > .container {
+      padding: 10px 0;
+    }
+
+    .footer > .container a {
+      padding: 0 10px;
+    }
+
+    .footer > .container span {
+      padding: 0 10px;
+    }
+
+  body
+    nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+      a(href="/").navbar-brand XXX
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse(id='navbar')
+        ul.navbar-nav
+          li.nav-item.active
+            a(href="/").nav-link 首页
+          li.nav-item
+            a(href='').nav-link 关于
+          li.nav-item
+            a(href='').nav-link 新闻
+          li.nav-item
+            a(href='').nav-link 发展
+          li.nav-item
+            a(href='').nav-link 联系我们
+
+    block main
+
+    .footer.jumbotron.jumbotron-fluid(style='margin-bottom: 0')
+      .container.w-75.text-center
+        a(href="") 首页
+        span |
+        a(href="") 关于
+        span |
+        a(href="") 首页
+        span |
+        a(href="") 首页
+        span |
+        a(href="") 首页
+      .container.w-75.text-center
+        span 版权所有
+        span 浙江xxxx有限公司
+        span 浙ICP备11016016号-1
+        span Designed
+        span by
+        span Pung
+        

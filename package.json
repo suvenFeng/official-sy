@@ -1,0 +1,40 @@
+{
+  "name": "official-sy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon app.js",
+    "build": "gulp build",
+    "start": "cross-env NODE_ENV=production node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suvenFeng/official-sy.git"
+  },
+  "keywords": [],
+  "author": "pung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suvenFeng/official-sy/issues"
+  },
+  "homepage": "https://github.com/suvenFeng/official-sy#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.1.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.3.0",
+    "mysql2": "^2.1.0",
+    "pug": "^3.0.0",
+    "sequelize": "^6.2.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-rev": "^9.0.0",
+    "nodemon": "^2.0.4"
+  }
+}

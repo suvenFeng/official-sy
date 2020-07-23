@@ -1,0 +1,89 @@
+doctype html
+
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title 登录
+    script(src='https://unpkg.com/vue/dist/vue.js')
+    script(src='https://unpkg.com/axios/dist/axios.min.js')
+    script(src='https://unpkg.com/element-ui/lib/index.js')
+    link(rel='stylesheet', href='https://unpkg.com/element-ui/lib/theme-chalk/index.css')
+
+  style.
+    .admin-login {
+      width: 600px;
+      padding-top: 100px;
+    }
+
+body
+  #app
+    .admin-login
+      el-form(:model='form.data', status-icon, :rules='form.rules', ref='form', label-width='100px')
+        el-form-item(label='用户名', prop='username')
+          el-input(v-model='form.data.username')
+        el-form-item(label='密码', prop='password')
+          el-input(v-model='form.data.password')
+        el-form-item
+          el-button(@click='form.submit.click') 登录
+        el-form-item
+          el-checkbox(v-model='form.data.rememberMe') 记住我
+
+
+script.
+  Vue.use(ELEMENT, { size: 'small', zIndex: 3000 })
+  new Vue(
+    {
+      el: '#app',
+
+      data () {
+        const _this = this
+        return {
+          form: {
+            init () {
+              _this.form.data = {
+                username: '',
+                password: '',
+                rememberMe: false
+              }
+            },
+            data: {
+              username: '',
+              password: '',
+              rememberMe: false
+            },
+            rules: {
+              username: { required: true, message: '请输入活动名称', trigger: 'blur' },
+              password: { required: true, message: '请输入密码', trigger: 'blur' }
+            },
+            submit: {
+              click () {
+                _this.$refs.form.validate(
+                  valid => {
+                    if (valid) {
+                      axios(
+                        {
+                          url: '/ajax/admin/login',
+                          method: 'post',
+                          data: _this.form.data
+                        }
+                      ).then(
+                        res => console.log(res)
+                        //- res => location.href = '/admin/banner'
+                      )
+                    }
+                    else console.log('error')
+                  }
+                )
+              }
+            }
+          }
+        }
+      },
+
+      mounted () {
+        this.form.init()
+      }
+    }
+  )

@@ -1,0 +1,88 @@
+extends layout
+
+block title
+  | 首页
+
+block import
+  style.
+    .container-fluid {
+      padding: 0;
+    }
+
+    .carousel-inner > .carousel-item > img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .business-item {
+      height: 290px;
+      cursor: pointer;
+      color: #554d4a;
+    }
+    .business-item:hover {
+      background: url('img/business_hover.png') no-repeat 510px 45px #e85514!important;
+
+      color: #FFF;
+    }
+
+    .business-item h2 {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .business-item h3 {
+      margin-left: 20px;
+    }
+
+block main
+  .container-fluid
+    div(id='carousel', data-ride='carousel').carousel.slide
+      ul.carousel-indicators
+        li(data-target='#carousel', data-slide-to='0').active
+        li(data-target='#carousel', data-slide-to='1')
+        li(data-target='#carousel', data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          img(src='https://resource.enoch-car.com/official/assets/index/banner.jpg', alt='First slide')
+        .carousel-item
+          img(src='https://resource.enoch-car.com/official/assets/index/banner1.jpg', alt='Second slide')
+        .carousel-item
+          img(src='https://resource.enoch-car.com/official/assets/index/banner2.jpg', alt='Third slide')
+    
+    .container.w-75(style='margin-top: 50px')
+      h2.text-center(style='height: 50px; line-height: 50px;') 公司介绍
+      .row
+        img(src='http://www.ver.cn/uploads/image/20170421/1492778495.jpg', alt='company').col-12.col-sm-12.col-md-12.col-lg-4.col-xl-4
+        .col-12.col-sm-12.col-md-12.col-xl-8.col-lg-8.col-xl-8(style='color: #6c6a6b').text-justify
+          p
+            | 公司于1993年创立，凭借在前期创意、影视拍摄、后期制作、技术研发等方面丰富经验的累积，先后创作出诸多成功的、家喻户晓的广告营销案例，作品囊括了国内外几乎全部业内奖项，包括金长城奖，龙玺，时报亚太奖等，成为中国广告创作实力前五强企业。
+          
+          p
+            | 2010年正式更名为博采传媒，致力于为全球观众打造高品质的视听娱乐内容，包括CG动画电影、剧集、真人影视等视频以及原创广告剧等音频节目。坚持高品质创作，不断创新。目前以电影、电视剧、三维动画等业务为代表的影视娱乐板块；以呼呼收音机为代表的移动互联板块；以品牌策划、创意、拍摄、制作、投放业务为代表的广告板块构成博采传媒三大业务板块。
+
+    .container.w-75.business(style='margin-top: 50px')
+      h2.text-center(style='height: 50px; line-height: 50px;') 业务布局
+      .row
+        .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6.bg-light.business-item
+          h2 Advertising service
+          h3 广告服务
+        .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6.bg-secondary.business-item
+          h2 Video entertainment
+          h3 影视娱乐
+      .row
+        .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6.bg-secondary.business-item
+          h2 Mobile entertainment
+          h3 移动娱乐
+        .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6.bg-light.business-item
+          h2 Brand licensing
+          h3 品牌授权
+
+    .container.w-75(style='margin-top: 50px')
+      h2.text-center(style='height: 50px; line-height: 50px;') 新闻中心
+      .row
+        .col-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.bg-light
+          img(src='img/video1.jpg', alt='video1', width='100%', height='70%')
+        .col-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.bg-light
+          img(src='img/video2.jpg', alt='video2', width='100%', height='70%')
+        .col-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.bg-light
+          img(src='img/video1.jpg', alt='video1', width='100%', height='70%')

@@ -1,0 +1,51 @@
+extends layout
+
+block title
+  | banner
+
+block main
+  #banner
+    div
+      el-table(:data='table.data')
+        el-table-column(label='序列号', type='index', width='80')
+        el-table-column(label='图片', prop='url')
+        el-table-column(label='操作', width='80')
+          el-button(type='text', @click='show') 展示
+
+  script.
+    Vue.use(ELEMENT, { size: 'small', zIndex: 3000 })
+    new Vue(
+      {
+        el: '#banner',
+
+        data () {
+          return {
+            table: {
+              data: [
+                {
+                  url: ''
+                }
+              ]
+            }
+          }
+        },
+
+        methods: {
+          show () {
+            console.log('show')
+          }
+        },
+
+        mounted () {
+          console.log('mounted')
+          axios(
+            {
+              url: '/ajax/admin/banner',
+              method: 'get'
+            }
+          ).then(
+            res => console.log(res)
+          )
+        }
+      }
+    )

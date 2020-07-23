@@ -1,0 +1,9 @@
+{
+}{
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.format.semicolons": "remove",
+    "editor.formatOnSave": true,
+    "javascript.preferences.quoteStyle": "single",
+    "editor.tabSize": 2
+}
